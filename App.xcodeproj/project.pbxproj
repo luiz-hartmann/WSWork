@@ -19,6 +19,7 @@
 		37C0734029280C5B00C539C3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0733F29280C5B00C539C3 /* HTTPMethod.swift */; };
 		37C0734229280CE100C539C3 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734129280CE100C539C3 /* HTTPClientError.swift */; };
 		37C0734429280D8700C539C3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734329280D8700C539C3 /* Route.swift */; };
+		37C0734629280E6000C539C3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734529280E6000C539C3 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		37C0733F29280C5B00C539C3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		37C0734129280CE100C539C3 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 		37C0734329280D8700C539C3 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		37C0734529280E6000C539C3 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				37C0733F29280C5B00C539C3 /* HTTPMethod.swift */,
 				37C0734129280CE100C539C3 /* HTTPClientError.swift */,
 				37C0734329280D8700C539C3 /* Route.swift */,
+				37C0734529280E6000C539C3 /* HTTPClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				37C0734429280D8700C539C3 /* Route.swift in Sources */,
 				37C073172928060B00C539C3 /* AppDelegate.swift in Sources */,
 				37C073192928060B00C539C3 /* SceneDelegate.swift in Sources */,
+				37C0734629280E6000C539C3 /* HTTPClient.swift in Sources */,
 				37C0734029280C5B00C539C3 /* HTTPMethod.swift in Sources */,
 				37C0733D29280A6D00C539C3 /* Viewcode.swift in Sources */,
 				37C073302928072400C539C3 /* HomeViewController.swift in Sources */,
