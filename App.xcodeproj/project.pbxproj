@@ -17,6 +17,7 @@
 		37C0733A2928080700C539C3 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C073392928080700C539C3 /* HomeCoordinator.swift */; };
 		37C0733D29280A6D00C539C3 /* Viewcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0733C29280A6D00C539C3 /* Viewcode.swift */; };
 		37C0734029280C5B00C539C3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0733F29280C5B00C539C3 /* HTTPMethod.swift */; };
+		37C0734229280CE100C539C3 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734129280CE100C539C3 /* HTTPClientError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		37C073392928080700C539C3 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		37C0733C29280A6D00C539C3 /* Viewcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcode.swift; sourceTree = "<group>"; };
 		37C0733F29280C5B00C539C3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		37C0734129280CE100C539C3 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				37C0733F29280C5B00C539C3 /* HTTPMethod.swift */,
+				37C0734129280CE100C539C3 /* HTTPClientError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C0734229280CE100C539C3 /* HTTPClientError.swift in Sources */,
 				37C073362928079E00C539C3 /* ApplicationCoordinator.swift in Sources */,
 				37C073342928079600C539C3 /* Coordinator.swift in Sources */,
 				37C073172928060B00C539C3 /* AppDelegate.swift in Sources */,
