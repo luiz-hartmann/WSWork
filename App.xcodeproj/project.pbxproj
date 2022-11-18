@@ -16,6 +16,7 @@
 		37C073362928079E00C539C3 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C073352928079E00C539C3 /* ApplicationCoordinator.swift */; };
 		37C0733A2928080700C539C3 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C073392928080700C539C3 /* HomeCoordinator.swift */; };
 		37C0733D29280A6D00C539C3 /* Viewcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0733C29280A6D00C539C3 /* Viewcode.swift */; };
+		37C0734029280C5B00C539C3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0733F29280C5B00C539C3 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		37C073352928079E00C539C3 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		37C073392928080700C539C3 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		37C0733C29280A6D00C539C3 /* Viewcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcode.swift; sourceTree = "<group>"; };
+		37C0733F29280C5B00C539C3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		37C0732A292806DD00C539C3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37C0733E29280C3E00C539C3 /* Networking */,
 				37C073312928078300C539C3 /* Protocols */,
 			);
 			path = Common;
@@ -156,6 +159,14 @@
 			path = Viewcode;
 			sourceTree = "<group>";
 		};
+		37C0733E29280C3E00C539C3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				37C0733F29280C5B00C539C3 /* HTTPMethod.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,6 +241,7 @@
 				37C073342928079600C539C3 /* Coordinator.swift in Sources */,
 				37C073172928060B00C539C3 /* AppDelegate.swift in Sources */,
 				37C073192928060B00C539C3 /* SceneDelegate.swift in Sources */,
+				37C0734029280C5B00C539C3 /* HTTPMethod.swift in Sources */,
 				37C0733D29280A6D00C539C3 /* Viewcode.swift in Sources */,
 				37C073302928072400C539C3 /* HomeViewController.swift in Sources */,
 				37C0733A2928080700C539C3 /* HomeCoordinator.swift in Sources */,
