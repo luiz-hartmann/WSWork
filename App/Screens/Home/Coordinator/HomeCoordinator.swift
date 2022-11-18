@@ -20,4 +20,5 @@ class HomeCoordinator: Coordinator {
         view.coordinator = self
         self.navigationController.pushViewController(view, animated: true)
     }
+    
 }

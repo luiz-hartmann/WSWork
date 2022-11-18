@@ -17,7 +17,7 @@ class ListCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Ford"
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     
@@ -64,6 +64,11 @@ class ListCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.accessoryType = .disclosureIndicator
         setup()
+    }
+    
+    func configure(car: Car) {
+        self.brandNameLabel.text = car.marcaNome.capitalized
+        self.modelNameLabel.text = car.nomeModelo.capitalized
     }
     
     // MARK: - Initialization

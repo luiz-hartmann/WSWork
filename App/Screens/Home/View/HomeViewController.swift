@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
         return tableView
     }()
     
-    func initViewModel() {
+    private func initViewModel() {
         viewModel.load()
         
         viewModel.reloadTableView = { [weak self] in
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.listAtIndex()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,6 +52,8 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListCell.identifier, for: indexPath) as? ListCell else {
             return UITableViewCell()
         }
+        
+        cell.configure(car: viewModel.numberOfRows(indexPath: indexPath))
         return cell
     }
     
