@@ -20,6 +20,7 @@ class DetailCoordinator: Coordinator {
     func start() {
         let view = DetailViewController()
         view.viewModel = viewModel
+        view.coordinator = self
         self.navigationController.pushViewController(view, animated: true)
     }
     

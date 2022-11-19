@@ -61,12 +61,15 @@ class DetailViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.backgroundColor = .systemBlue
         button.layer.cornerRadius = 10
+        button.isUserInteractionEnabled = true
+        button.isEnabled = true
         button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
         return button
     }()
     
      @objc private func saveButtonTap() {
         self.coordinator?.onSave()
+        
     }
     
     private lazy var stackView: UIStackView = {
