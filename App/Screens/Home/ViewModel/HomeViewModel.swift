@@ -17,6 +17,7 @@ class HomeViewModel {
             switch response {
             case .success(let cars):
                 self.model = cars
+                self.reloadTableView?()
             case .failure(let error):
                 print(error.localizedDescription)
             }
