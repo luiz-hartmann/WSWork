@@ -27,6 +27,7 @@
 		37C0735329281FAB00C539C3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0735229281FAB00C539C3 /* DetailViewController.swift */; };
 		37C0735829281FF100C539C3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0735729281FF100C539C3 /* DetailViewModel.swift */; };
 		37C0735A2928208700C539C3 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C073592928208700C539C3 /* DetailCoordinator.swift */; };
+		37C0736029285C4500C539C3 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0735F29285C4500C539C3 /* Wrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		37C0735229281FAB00C539C3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		37C0735729281FF100C539C3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		37C073592928208700C539C3 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		37C0735F29285C4500C539C3 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		37C0732A292806DD00C539C3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				37C0735E29285C3D00C539C3 /* Utility */,
 				37C0733E29280C3E00C539C3 /* Networking */,
 				37C073312928078300C539C3 /* Protocols */,
 			);
@@ -245,6 +248,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		37C0735E29285C3D00C539C3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				37C0735F29285C4500C539C3 /* Wrapper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -324,6 +335,7 @@
 				37C073342928079600C539C3 /* Coordinator.swift in Sources */,
 				37C0734B29280F6600C539C3 /* Car.swift in Sources */,
 				37C0734429280D8700C539C3 /* Route.swift in Sources */,
+				37C0736029285C4500C539C3 /* Wrapper.swift in Sources */,
 				37C0735329281FAB00C539C3 /* DetailViewController.swift in Sources */,
 				37C073172928060B00C539C3 /* AppDelegate.swift in Sources */,
 				37C073192928060B00C539C3 /* SceneDelegate.swift in Sources */,

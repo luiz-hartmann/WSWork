@@ -33,11 +33,12 @@ class ListCell: UITableViewCell {
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "car.fill")
+        imageView.tintColor = .secondaryLabel
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 25
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.image = UIImage(systemName: "car.fill")
         return imageView
     }()
     

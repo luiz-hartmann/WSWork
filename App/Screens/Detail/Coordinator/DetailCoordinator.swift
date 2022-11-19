@@ -20,8 +20,12 @@ class DetailCoordinator: Coordinator {
     func start() {
         let view = DetailViewController()
         view.viewModel = viewModel
-
         self.navigationController.pushViewController(view, animated: true)
+    }
+    
+    func onSave() {
+        let coordinator = HomeCoordinator(navigationController: navigationController)
+        coordinator.start()
     }
 }
 

@@ -12,12 +12,12 @@ struct Car: Codable {
     let marcaID: Int
     let marcaNome: String
     let nomeModelo: String
-    let ano: Ano
+    @StringForcible var ano: String?
     let combustivel: String
     let numPortas: Int
-    let valorFipe: ValorFipe
+    let valorFipe: StringForcible?
     let cor: String
-    let timestampCadastro: Ano
+    let timestampCadastro: StringForcible?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -33,45 +33,4 @@ struct Car: Codable {
 }
 
 
-enum Ano: Codable {
-    case integer(Int)
-    case string(String)
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let value = try? container.decode(Int.self) {
-            self = .integer(value)
-            return
-        }
-        
-        if let value = try? container.decode(String.self) {
-            self = .string(value)
-            return
-        }
-        throw DecodingError.typeMismatch(Ano.self,
-                                         DecodingError.Context(codingPath: decoder.codingPath,
-                                                               debugDescription: "Wrong type for Ano"))
-    }
-}
-
-enum ValorFipe: Codable {
-    case double(Double)
-    case string(String)
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let value = try? container.decode(Double.self) {
-            self = .double(value)
-            return
-        }
-        
-        if let value = try? container.decode(String.self) {
-            self = .string(value)
-            return
-        }
-        throw DecodingError.typeMismatch(ValorFipe.self,
-                                         DecodingError.Context(codingPath: decoder.codingPath,
-                                                               debugDescription: "Wrong type for ValorFipe"))
-    }
-}
 
