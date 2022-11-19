@@ -24,6 +24,9 @@
 		37C0734B29280F6600C539C3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734A29280F6600C539C3 /* Car.swift */; };
 		37C0734D2928166D00C539C3 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734C2928166D00C539C3 /* ListCell.swift */; };
 		37C073502928170F00C539C3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0734F2928170F00C539C3 /* HomeViewModel.swift */; };
+		37C0735329281FAB00C539C3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0735229281FAB00C539C3 /* DetailViewController.swift */; };
+		37C0735829281FF100C539C3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C0735729281FF100C539C3 /* DetailViewModel.swift */; };
+		37C0735A2928208700C539C3 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C073592928208700C539C3 /* DetailCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		37C0734A29280F6600C539C3 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		37C0734C2928166D00C539C3 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		37C0734F2928170F00C539C3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		37C0735229281FAB00C539C3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		37C0735729281FF100C539C3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		37C073592928208700C539C3 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		37C0732B292806E300C539C3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				37C0735129281F9F00C539C3 /* Detail */,
 				37C0732E2928071300C539C3 /* Home */,
 			);
 			path = Screens;
@@ -125,10 +132,10 @@
 		37C0732E2928071300C539C3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				37C0734E2928170200C539C3 /* ViewModel */,
 				37C07338292807FC00C539C3 /* Coordinator */,
 				37C0734929280F5900C539C3 /* Model */,
 				37C07337292807F200C539C3 /* View */,
+				37C0734E2928170200C539C3 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -204,6 +211,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		37C0735129281F9F00C539C3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				37C0735429281FD800C539C3 /* Coordinator */,
+				37C0735529281FDD00C539C3 /* View */,
+				37C0735629281FE100C539C3 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		37C0735429281FD800C539C3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				37C073592928208700C539C3 /* DetailCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		37C0735529281FDD00C539C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37C0735229281FAB00C539C3 /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37C0735629281FE100C539C3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37C0735729281FF100C539C3 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,13 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C0735829281FF100C539C3 /* DetailViewModel.swift in Sources */,
 				37C0734229280CE100C539C3 /* HTTPClientError.swift in Sources */,
 				37C073362928079E00C539C3 /* ApplicationCoordinator.swift in Sources */,
+				37C0735A2928208700C539C3 /* DetailCoordinator.swift in Sources */,
 				37C0734829280F0A00C539C3 /* Client.swift in Sources */,
 				37C0734D2928166D00C539C3 /* ListCell.swift in Sources */,
 				37C073342928079600C539C3 /* Coordinator.swift in Sources */,
 				37C0734B29280F6600C539C3 /* Car.swift in Sources */,
 				37C0734429280D8700C539C3 /* Route.swift in Sources */,
+				37C0735329281FAB00C539C3 /* DetailViewController.swift in Sources */,
 				37C073172928060B00C539C3 /* AppDelegate.swift in Sources */,
 				37C073192928060B00C539C3 /* SceneDelegate.swift in Sources */,
 				37C0734629280E6000C539C3 /* HTTPClient.swift in Sources */,
