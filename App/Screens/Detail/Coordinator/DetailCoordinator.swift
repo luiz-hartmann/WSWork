@@ -24,8 +24,8 @@ class DetailCoordinator: Coordinator {
         self.navigationController.pushViewController(view, animated: true)
     }
     
-    func onSave() {
-        let coordinator = HomeCoordinator(navigationController: navigationController)
+    func presentRegisterView() {
+        let coordinator = RegisterCoordinator(navigationController: navigationController)
         coordinator.start()
     }
 }

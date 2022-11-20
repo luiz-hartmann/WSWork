@@ -21,6 +21,7 @@ extension HTTPClientProtocol {
             guard let response = response as? HTTPURLResponse,
                   (200..<300) ~= response.statusCode else {
                 completion(nil, HTTPClientError.invalidStatusCode)
+                print(error)
                 return
             }
             
@@ -37,10 +38,12 @@ extension HTTPClientProtocol {
             do {
                 let decoder = JSONDecoder()
                 let json = try decoder.decode(decodingType, from: data)
+           
                 completion(json, nil)
                 
             } catch {
                 completion(nil, HTTPClientError.parseError)
+                
             }
         }
     }
@@ -50,11 +53,13 @@ extension HTTPClientProtocol {
         decodingTask(request: request, decodingType: T.self) { decodable, error in
             if let error = error {
                 completion(Result.failure(error))
+               
                 return
             }
             
             guard let model = decodable else {
                 completion(Result.failure(HTTPClientError.missingData))
+                
                 return
             }
             completion(Result.success(model))

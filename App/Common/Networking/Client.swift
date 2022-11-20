@@ -7,13 +7,6 @@
 
 import Foundation
 
-struct Endpoint: Route {
-    var baseURL: String
-    var path: String
-    var parameters: Any?
-    var method: HTTPMethod
-}
-
 class Client: HTTPClientProtocol {
     func fetchCars(completion: @escaping (Result<[Car], HTTPClientError>) -> Void) {
         let route = Endpoint(baseURL: "https://wswork.com.br/", path: "cars.json", method: .get)

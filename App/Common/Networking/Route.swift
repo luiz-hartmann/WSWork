@@ -20,6 +20,12 @@ extension Route {
         return URL(string: baseURL + path)!
     }
     
+    var headers: [String: String] {
+        return [ "Content-Type": "application/json",
+                 "Accept": "application/json",
+                 "Authorization": "Basic \(baseURL + path)"]
+    }
+    
     var dataParameters: Data? {
         guard let parameters = parameters else { return nil }
         let data = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
@@ -30,6 +36,8 @@ extension Route {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.httpBody = dataParameters
+        request.allHTTPHeaderFields = headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
 }

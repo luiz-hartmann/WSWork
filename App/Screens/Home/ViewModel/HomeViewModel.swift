@@ -13,13 +13,13 @@ class HomeViewModel {
     var reloadTableView: (() -> Void)?
     
     func load() {
-        client.fetchCars() { response in
+        client.fetchCars() { [weak self] response in
             switch response {
             case .success(let cars):
-                self.model = cars
-                self.reloadTableView?()
+                self?.model = cars
+                self?.reloadTableView?()
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
             }
         }
     }
