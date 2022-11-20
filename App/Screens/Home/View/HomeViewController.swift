@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
     
     var coordinator: HomeCoordinator?
     
-    lazy var viewModel = {
+    private lazy var viewModel = {
         HomeViewModel()
     }()
     

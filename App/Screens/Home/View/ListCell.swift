@@ -16,7 +16,6 @@ class ListCell: UITableViewCell {
     private lazy var brandNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Ford"
         label.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
@@ -24,7 +23,6 @@ class ListCell: UITableViewCell {
     private lazy var modelNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Lorem Ipsum"
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray
         return label
@@ -33,12 +31,10 @@ class ListCell: UITableViewCell {
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(systemName: "car.fill")
+        imageView.image = UIImage(systemName: "car")
         imageView.tintColor = .secondaryLabel
         imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 25
-        imageView.layer.masksToBounds = true
-        imageView.clipsToBounds = true
         return imageView
     }()
     

@@ -8,6 +8,7 @@
 import Foundation
 
 class DetailViewModel {
+    
     var car: Car
     
     init(car: Car) {
