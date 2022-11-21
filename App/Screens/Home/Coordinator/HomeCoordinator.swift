@@ -20,4 +20,9 @@ class HomeCoordinator: Coordinator {
         view.coordinator = self
         self.navigationController.pushViewController(view, animated: true)
     }
+    
+    func didSelect(car: Car) {
+        let coordinator = DetailCoordinator(navigationController: navigationController, viewModel: DetailViewModel(car: car))
+        coordinator.start()
+    }
 }
