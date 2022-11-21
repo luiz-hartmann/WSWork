@@ -1,5 +1,4 @@
 # Desafio WSWork
-================
 
 ## Considerações
 
