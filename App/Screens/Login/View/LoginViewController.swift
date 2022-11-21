@@ -84,7 +84,6 @@ class LoginViewController: UIViewController {
         stackView.distribution = .fillEqually
         return stackView
     }()
-
 }
 
 extension LoginViewController: Viewcode {

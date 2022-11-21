@@ -21,8 +21,19 @@ class RegisterCoordinator: Coordinator {
         self.navigationController.pushViewController(view, animated: true)
     }
     
-    func presentLoginView() {
-        let coordinator = LoginCoordinator(navigationController: navigationController)
-        coordinator.start()
+    func create(userViewModel: UserViewModel) {
+        let userViewModel = DBCommands.insertRow(userViewModel)
+        
+        if userViewModel == true {
+            self.navigationController.presentAlert(withTitle: "Sucesso!", message: "As informações foram salvas")
+            self.popToRoot()
+        } else {
+            self.navigationController.presentAlert(withTitle: "Tente novamente", message: "Esse endereço de email já está em uso.")
+        }
+    }
+    
+    func popToRoot() {
+        self.navigationController.dismiss(animated: true, completion: nil)
+        self.navigationController.popToRootViewController(animated: true)
     }
 }

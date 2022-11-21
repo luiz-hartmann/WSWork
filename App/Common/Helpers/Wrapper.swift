@@ -9,9 +9,8 @@ import Foundation
 
 @propertyWrapper
 struct StringForcible: Codable {
-    
     var wrappedValue: String?
-    
+
     enum CodingKeys: CodingKey {}
     
     init(from decoder: Decoder) throws {
