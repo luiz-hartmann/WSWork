@@ -87,7 +87,7 @@ class DetailViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.alignment = .center
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 8
         stackView.backgroundColor = .secondarySystemBackground
         return stackView
     }()

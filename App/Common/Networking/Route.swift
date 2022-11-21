@@ -23,7 +23,7 @@ extension Route {
     var headers: [String: String] {
         return [ "Content-Type": "application/json",
                  "Accept": "application/json",
-                 "Authorization": "Basic \(baseURL + path)"]
+                 "Authorization": "Basic"]
     }
     
     var dataParameters: Data? {
@@ -37,7 +37,6 @@ extension Route {
         request.httpMethod = method.rawValue
         request.httpBody = dataParameters
         request.allHTTPHeaderFields = headers
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
 }

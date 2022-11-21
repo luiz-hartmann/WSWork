@@ -10,10 +10,18 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     var coordinator: RegisterCoordinator?
-
+    private var userViewModel: UserViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
+        createTable()
         setup()
+    }
+    
+    private func createTable() {
+        let database = DB.sharedInstance
+        database.createTable()
     }
     
     // MARK: - UI Components
@@ -29,15 +37,26 @@ class RegisterViewController: UIViewController {
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Crie seu usuário e senha"
+        label.text = "Preencha as informações abaixo"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
     
+    private lazy var nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Nome"
+        textField.autocapitalizationType = .none
+        textField.font = UIFont.systemFont(ofSize: 13)
+        textField.keyboardType = .default
+        textField.borderStyle = .roundedRect
+        textField.delegate = self
+        return textField
+    }()
+    
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Username"
+        textField.placeholder = "Email"
         textField.autocapitalizationType = .none
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.keyboardType = .emailAddress
@@ -48,7 +67,7 @@ class RegisterViewController: UIViewController {
     
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Password"
+        textField.placeholder = "Senha"
         textField.autocapitalizationType = .none
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.keyboardType = .emailAddress
@@ -57,15 +76,15 @@ class RegisterViewController: UIViewController {
         textField.delegate = self
         return textField
     }()
-
-    private lazy var createAccountLabel: UIButton = {
+    
+    private lazy var registerButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Criar conta", for: .normal)
+        button.setTitle("Salvar", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.layer.cornerRadius = 5
         button.backgroundColor = .systemBlue
-        button.addTarget(self, action: #selector(createAccountLabelTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(registerButtonTap), for: .touchUpInside)
         return button
     }()
     
@@ -77,9 +96,9 @@ class RegisterViewController: UIViewController {
         stackView.spacing = 10
         return stackView
     }()
-
+    
     private lazy var textFieldStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField,
+        let stackView = UIStackView(arrangedSubviews: [nameTextField, emailTextField,
                                                        passwordTextField])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -88,8 +107,14 @@ class RegisterViewController: UIViewController {
         return stackView
     }()
     
-    @objc private func createAccountLabelTap() {
-        self.coordinator?.presentLoginView()
+    @objc private func registerButtonTap() {
+        
+        let userViewModel = UserViewModel(user: User(id: 0, name: "",
+                                                     email: emailTextField.text ?? String.empty,
+                                                     password: passwordTextField.text ?? String.empty))
+        
+        self.coordinator?.create(userViewModel: userViewModel)
+        
     }
 }
 
@@ -97,7 +122,7 @@ extension RegisterViewController: Viewcode {
     func buildViewHierarchy() {
         view.addSubview(labelStackView)
         view.addSubview(textFieldStackView)
-        view.addSubview(createAccountLabel)
+        view.addSubview(registerButton)
     }
     
     func addConstraints() {
@@ -110,11 +135,11 @@ extension RegisterViewController: Viewcode {
             textFieldStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             textFieldStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             emailTextField.heightAnchor.constraint(equalToConstant: 50),
-
-            createAccountLabel.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: 30),
-            createAccountLabel.leadingAnchor.constraint(equalTo: textFieldStackView.leadingAnchor),
-            createAccountLabel.trailingAnchor.constraint(equalTo: textFieldStackView.trailingAnchor),
-            createAccountLabel.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            
+            registerButton.topAnchor.constraint(equalTo: textFieldStackView.bottomAnchor, constant: 30),
+            registerButton.leadingAnchor.constraint(equalTo: textFieldStackView.leadingAnchor),
+            registerButton.trailingAnchor.constraint(equalTo: textFieldStackView.trailingAnchor),
+            registerButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
         ])
     }
     

@@ -24,7 +24,7 @@ class DetailViewModel {
     }
     
     var ano: String {
-        return "Ano: \(self.car.ano ?? "")"
+        return "Ano: \(self.car.ano ?? String.empty)"
     }
     
     var combustivel: String {
